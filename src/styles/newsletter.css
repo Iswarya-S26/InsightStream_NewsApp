@@ -1,0 +1,21 @@
+.card {
+  width: 288px;
+}
+
+img.card-img-top {
+  height: 190px;
+}
+.newsletter-component {
+  flex: 1 1 calc(20% - 15px); /* Adjusts card width to fit 5 items in a row */
+  min-width: 250px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.newsletter-component:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: #f8f9fa;
+  border-radius: 10px;
+  cursor: pointer;
+}
