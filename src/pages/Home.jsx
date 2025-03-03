@@ -17,23 +17,15 @@ const Home = () => {
         const allArticles = [];
         // Fetch articles for each category
         for (let category of categories) {
-          const response = await axios.get(
-            `https://newsapi.org/v2/everything?q=${category}&apiKey=${
-              import.meta.env.VITE_NEWS_API_KEY
-            }`
-          );
+          // const response = await axios.get(
+          //   `https://newsapi.org/v2/everything?q=${category}&apiKey=${
+          //     import.meta.env.VITE_NEWS_API_KEY
+          //   }`
+          const response = await axios.get(`https://newsapi.org/v2/everything?q=${category}&apiKey=7fc84dc6050041fb9083a9bebb461480`);
 
           const filtered_data = response.data.articles.filter((item) => {
             // Ensure each article has the required fields
-            return (
-              item.author &&
-              item.title &&
-              item.description &&
-              item.url &&
-              item.urlToImage &&
-              item.publishedAt &&
-              item.content
-            );
+            return item.author && item.title && item.description && item.url && item.urlToImage && item.publishedAt && item.content;
           });
           console.log(filtered_data);
 
@@ -89,10 +81,7 @@ const Home = () => {
       ) : (
         articles.map((categoryData, idx) => (
           <div key={idx}>
-            <h2 className="text-center text-md-start ms-md-5 my-md-3">
-              {categoryData.category.charAt(0).toUpperCase() +
-                categoryData.category.slice(1)}
-            </h2>
+            <h2 className="text-center text-md-start ms-md-5 my-md-3">{categoryData.category.charAt(0).toUpperCase() + categoryData.category.slice(1)}</h2>
             <div className="cards-container">
               {/* Map over articles for each category and display */}
               {categoryData.articles
@@ -104,10 +93,7 @@ const Home = () => {
 
             {/* Show More button to toggle the number of visible articles */}
             <div className="show-more-container">
-              <button
-                className="btn-show-more"
-                onClick={() => toggleShowMore(categoryData.category)}
-              >
+              <button className="btn-show-more" onClick={() => toggleShowMore(categoryData.category)}>
                 {showMore[categoryData.category] ? "Show Less" : "Show More"}
               </button>
             </div>
