@@ -71,8 +71,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Top Headlines</h1>
-
+      newwwwwwwwwww<h1>Top Headlines</h1>
       {/* Display spinner while loading */}
       {loading ? (
         <div className="spinner-container">
