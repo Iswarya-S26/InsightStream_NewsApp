@@ -1,6 +1,6 @@
 {
   "name": "news_world",
-  "homepage": "http://Iswarya-S26.github.io/news_world/",
+  "homepage": "http://Iswarya-S26.github.io/news_world",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.67.1",
